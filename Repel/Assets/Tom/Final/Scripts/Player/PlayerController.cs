@@ -19,21 +19,45 @@ namespace Repel
         [SerializeField]
         private float _DirectionAngle;
 
+        [Header("Forces")]
+        [SerializeField]
+        private float _StartingMoveSpeed;
+        [SerializeField]
+        private float _Acceleration;
+
+        private float _MoveSpeed;
 
         private float _CurrDirectionAngle;
+        private bool _PlayerMayAccelerate;
+
+
+        //Set player forces.
+        private void Awake()
+        {
+            _MoveSpeed = _StartingMoveSpeed;
+        }
 
 
         //Update all the functions that require a framecall.
         private void Update()
         {
+            AcceleratePlayer();
             MovePlayer();
+        }
+
+
+        //Keeps adding speed to the player's movespeed, so he can keep up with the camera.
+        //NOTE: Make sure the accelerationspeed is never higher as the camera. Because the player needs to pick up speedboosts to keep up with the camera.
+        private void AcceleratePlayer()
+        {
+            _MoveSpeed += _Acceleration * Time.deltaTime;
         }
 
 
         //Move the player forward.
         private void MovePlayer()
         {
-            transform.Translate(transform.forward * 5f * Time.deltaTime, Space.World);
+            transform.Translate(transform.forward * _MoveSpeed * Time.deltaTime, Space.World);
         }
 
 
@@ -80,7 +104,7 @@ namespace Repel
         //When the player dies make sure to tell the gameManager that, he will give the signal to everyone else.
         public void Die()
         {
-            _GameManager.SetGameState("AFTER_PLAYER_RUN");
+            //_GameManager.SetGameState("AFTER_PLAYER_RUN");
         }
     }
 }

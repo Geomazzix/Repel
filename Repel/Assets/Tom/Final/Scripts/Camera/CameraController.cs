@@ -25,7 +25,23 @@ namespace Repel
         }
 
 
+        //Updates all framecalls.
         private void Update()
+        {
+            AccelerateCamera();
+            MoveCamera();
+        }
+
+
+        //Keep adding speed to the movespeed of the camera so the player will have to keep up.
+        private void AccelerateCamera()
+        {
+            _MoveSpeed += _Acceleration * Time.deltaTime;
+        }
+
+
+        //Moves the camera into the movedirection with the movespeed.
+        private void MoveCamera()
         {
             transform.Translate(_MoveDirection * _MoveSpeed * Time.deltaTime, Space.World);
         }

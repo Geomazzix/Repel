@@ -39,7 +39,7 @@ namespace Repel
             }
         }
 
-        
+
         //Extends the level by choosing the leveltile which the parameter defines and placing that on the new position.
         public void ExtendLevel(int levelTileIndex)
         {

@@ -9,6 +9,9 @@ namespace Repel
     public sealed class LoadingSceneAsync : MonoBehaviour
     {
         [SerializeField]
+        private string _SceneName;
+
+        [SerializeField]
         private Slider _LoadingBar;
 
         [SerializeField]
@@ -16,9 +19,9 @@ namespace Repel
 
 
         //Gets called when the game starts.
-        public void Awake()
+        public void LoadScene()
         {
-            StartCoroutine(LoadSceneAsync("GameScene"));
+            StartCoroutine(LoadSceneAsync(_SceneName));
         }
 
 
@@ -38,5 +41,4 @@ namespace Repel
             }
         }
     }
-
 }

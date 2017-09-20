@@ -11,7 +11,7 @@ namespace Repel
     /*
     *Summary: The Gamemanager handles the game state, he is capable of pausing the game and creating a new run for the player to try again.
     */
-    public sealed class GameManager : MonoBehaviour
+    public sealed class GameStateManager : MonoBehaviour
     {
         #region Inspector.
         [Tooltip("StartState of the game.")]
@@ -23,6 +23,13 @@ namespace Repel
         private string _CurrGameState;
         public event UpdateGameStateDelegate UpdateGameStateEvent;
         #endregion
+
+
+        //Make sure to make this object static.
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
 
 
         //Changes the current gamestate.

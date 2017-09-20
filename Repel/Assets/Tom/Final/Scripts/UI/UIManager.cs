@@ -24,7 +24,7 @@ namespace Repel
             }
 
             _MenuManagers[0].EnableVisuals();
-            _GameManager.UpdateGameStateEvent += EnableMenu;
+            //_GameManager.UpdateGameStateEvent += EnableMenu;
         }
 
 
