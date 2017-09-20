@@ -16,6 +16,10 @@ ModelImporter:
     100016: Background_hexagon_7
     100018: Background_hexagon_8
     100020: Background_hexagon_9
+    100022: Background_hexagon_11
+    100024: Background_hexagon_12
+    100026: Background_hexagon_13
+    100028: Background_hexagon_14
     400000: //RootNode
     400002: Background_hexagon_1
     400004: Background_hexagon_10
@@ -27,6 +31,10 @@ ModelImporter:
     400016: Background_hexagon_7
     400018: Background_hexagon_8
     400020: Background_hexagon_9
+    400022: Background_hexagon_11
+    400024: Background_hexagon_12
+    400026: Background_hexagon_13
+    400028: Background_hexagon_14
     2300000: Background_hexagon_1
     2300002: Background_hexagon_10
     2300004: Background_hexagon_2
@@ -37,6 +45,10 @@ ModelImporter:
     2300014: Background_hexagon_7
     2300016: Background_hexagon_8
     2300018: Background_hexagon_9
+    2300020: Background_hexagon_11
+    2300022: Background_hexagon_12
+    2300024: Background_hexagon_13
+    2300026: Background_hexagon_14
     3300000: Background_hexagon_1
     3300002: Background_hexagon_10
     3300004: Background_hexagon_2
@@ -47,6 +59,10 @@ ModelImporter:
     3300014: Background_hexagon_7
     3300016: Background_hexagon_8
     3300018: Background_hexagon_9
+    3300020: Background_hexagon_11
+    3300022: Background_hexagon_12
+    3300024: Background_hexagon_13
+    3300026: Background_hexagon_14
     4300000: Background_hexagon_1
     4300002: Background_hexagon_2
     4300004: Background_hexagon_3
@@ -57,6 +73,10 @@ ModelImporter:
     4300014: Background_hexagon_8
     4300016: Background_hexagon_9
     4300018: Background_hexagon_10
+    4300020: Background_hexagon_11
+    4300022: Background_hexagon_12
+    4300024: Background_hexagon_13
+    4300026: Background_hexagon_14
     7400000: Take 001
     9500000: //RootNode
   materials:
