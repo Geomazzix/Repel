@@ -7,9 +7,6 @@ namespace Repel
     public sealed class CameraController : MonoBehaviour
     {
         [SerializeField]
-        private PlayerController _Player;
-
-        [SerializeField]
         private Vector3 _MoveDirection;
 
         [SerializeField]

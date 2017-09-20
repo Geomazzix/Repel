@@ -58,7 +58,8 @@ public class SpawnPlayerBall : MonoBehaviour
             //Make sure to reset the spawning ball.
             if (Input.GetButtonUp("Fire1"))
             {
-                _SpawningPlayerBall.tag = "PlayerBall";
+                //Activating the spherecollider will activate the collision for the player.
+                _SpawningPlayerBall.GetComponent<SphereCollider>().enabled = true;
                 _SpawningPlayerBall = null;
             }
         }

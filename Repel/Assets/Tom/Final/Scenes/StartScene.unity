@@ -150,7 +150,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FirstScene: MainMenu
-  _FadeOutImageOverlay: {fileID: 1159752502}
+  _FadeOutImageOverlay: {fileID: 1449368515}
+  _FadeOverlay: {fileID: 1159752502}
+  _FadeSpeed: 0.8
 --- !u!114 &24533981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +300,7 @@ GameObject:
   - component: {fileID: 735844981}
   - component: {fileID: 735844980}
   - component: {fileID: 735844979}
+  - component: {fileID: 735844984}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -375,6 +378,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735844984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735844978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 5b5fd3573eea5484087a5ce35cfc8122, type: 2}
 --- !u!1001 &746229539
 Prefab:
   m_ObjectHideFlags: 0
@@ -962,6 +977,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1401022945}
+--- !u!1 &1449368514 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1216005941365642, guid: a8fa4055b32401248bb9e19e6da181e5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1159752500}
+--- !u!114 &1449368515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449368514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c6cc58e622fca45a48c0e10e7ffe1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1625782175
 GameObject:
   m_ObjectHideFlags: 0

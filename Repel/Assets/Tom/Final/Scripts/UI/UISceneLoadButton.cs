@@ -23,7 +23,7 @@ namespace Repel
         //Loads in a new scene.
         public void LoadScene(string sceneName)
         {
-            _GameManager.LoadSceneASync(sceneName);
+            _GameManager.StartSceneFadeIn(sceneName);
         }
     }
 }
