@@ -763,12 +763,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 178212553}
-  m_LocalRotation: {x: -0.3420201, y: -0, z: -0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 8.261832, z: 20.059616}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9448595, z: 22.347162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 919492768}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &178212555
 BoxCollider:
@@ -960,7 +960,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -977,6 +977,10 @@ Prefab:
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -1328,7 +1332,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -1349,6 +1353,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -1564,7 +1572,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -1585,6 +1593,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -1673,7 +1685,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -1694,6 +1706,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -2042,7 +2058,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -2063,6 +2079,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -3614,7 +3634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -3635,6 +3655,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -3909,16 +3933,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919492763}
-  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 7.51, z: 1.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1629265847}
-  - {fileID: 956252850}
-  - {fileID: 178212554}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &919492769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4079,7 +4100,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -4100,6 +4121,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -4292,12 +4317,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 956252849}
-  m_LocalRotation: {x: -0.3420201, y: -0, z: -0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: -4.720602, z: 4.7766876}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.8234134, z: 2.2948112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 919492768}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &956252851
 BoxCollider:
@@ -4522,7 +4547,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -4543,6 +4568,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -4858,7 +4887,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -4879,6 +4908,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -5100,7 +5133,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -5121,6 +5154,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -5334,7 +5371,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -5355,6 +5392,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -5614,7 +5655,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -5635,6 +5676,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -5975,7 +6020,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -5996,6 +6041,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -6037,7 +6086,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -6058,6 +6107,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -6981,7 +7034,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -7002,6 +7055,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -7211,12 +7268,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1629265846}
-  m_LocalRotation: {x: -0.3420201, y: -0, z: -0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 19.84, z: 35.34}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0077877045, z: 41.49492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 919492768}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1629265848
 BoxCollider:
@@ -7354,7 +7411,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -7375,6 +7432,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -7673,7 +7734,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -7694,6 +7755,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -7735,7 +7800,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -7756,6 +7821,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -7797,7 +7866,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -7818,6 +7887,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -7859,7 +7932,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -7880,6 +7953,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
@@ -8052,7 +8129,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -8073,6 +8150,10 @@ Prefab:
     - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
       propertyPath: m_Name
       value: Animated_Background (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79a26ff9c1be945a6dd9b6e5a215a9, type: 3}
