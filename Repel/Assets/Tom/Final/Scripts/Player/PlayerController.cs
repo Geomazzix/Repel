@@ -41,7 +41,6 @@ namespace Repel
         [Tooltip("This array contains all the objects that kill the player when touched.")]
         [SerializeField]
         private GameObject[] _KillObjects;
-
         #endregion
 
         #region Private members
@@ -79,6 +78,7 @@ namespace Repel
         //Call all the updated player functions.
         private void Update()
         {
+            AcceleratePlayer();
             MovePlayer();
             ReflectPlayer();
             AdjustPlayerDirection();
@@ -86,10 +86,16 @@ namespace Repel
         }
 
 
+        //Accelerates the player.
+        private void AcceleratePlayer()
+        {
+            _MoveSpeed += _Acceleration * Time.deltaTime;
+        }
+
+
         //Moves the player (made it for readability code).
         private void MovePlayer()
         {
-            _MoveSpeed += _Acceleration * Time.deltaTime;
             transform.Translate(transform.forward * _MoveSpeed * Time.deltaTime, Space.World);
         }
 
@@ -175,10 +181,6 @@ namespace Repel
                     }
                 }
             }
-            else if (other.gameObject.CompareTag("DeadlyObstacle"))
-            {
-                Die();
-            }
         }
 
 
@@ -192,6 +194,7 @@ namespace Repel
         //Destroys the player.
         private void Die()
         {
+            _GameManager.StartSceneFadeOut("DeathMenu");
             gameObject.SetActive(false);
         }
     }

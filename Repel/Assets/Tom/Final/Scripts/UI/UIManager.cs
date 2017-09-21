@@ -24,7 +24,6 @@ namespace Repel
             }
 
             _MenuManagers[0].EnableVisuals();
-            //_GameManager.UpdateGameStateEvent += EnableMenu;
         }
 
 
@@ -43,13 +42,6 @@ namespace Repel
                     _MenuManagers[i].DisableVisuals();
                 }
             }
-        }
-
-
-        //Gets called when the menu is supposed to change.
-        public void EnableMenu(int menuIndex)
-        {
-            SetActiveMenu(menuIndex);
         }
     }
 }

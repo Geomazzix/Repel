@@ -6,19 +6,18 @@ using UnityEngine.UI;
 
 namespace Repel
 {
-    public sealed class GameManager : MonoBehaviour
+    public sealed class GameManager : Singleton
     {
         [SerializeField]
         private string _FirstScene;
-
-        [SerializeField]
-        private FadeScreen _FadeOutImageOverlay;
 
         [SerializeField]
         private Image _FadeOverlay;
 
         [SerializeField]
         private float _FadeSpeed;
+
+        private MenuManager[] _MenuManagers;
 
 
         private float _FadeValue = 0f;
@@ -28,6 +27,7 @@ namespace Repel
         private void Awake()
         {
             StartCoroutine(LoadSceneAsync(_FirstScene));
+            StartSceneFadeIn(_FirstScene);
         }
 
 
@@ -41,22 +41,26 @@ namespace Repel
         //Starts the screen fadeout.
         public void StartSceneFadeOut(string sceneName)
         {
+            _FadeOverlay.gameObject.SetActive(true);
             _FadeValue = 0f;
-            StartCoroutine(FadeCoroutine(-1, _FadeSpeed, _FadeOverlay, sceneName));
+            StartCoroutine(FadeCoroutine(1, _FadeSpeed, _FadeOverlay, sceneName));
         }
 
 
         //Starts the screen fadein.
         public void StartSceneFadeIn(string sceneName)
         {
+            _FadeOverlay.gameObject.SetActive(true);
             _FadeValue = 1f;
-            StartCoroutine(FadeCoroutine(1, _FadeSpeed, _FadeOverlay, sceneName));
+            StartCoroutine(FadeCoroutine(-1, _FadeSpeed, _FadeOverlay, sceneName));
         }
 
 
         //Fades into the image's alpha value into the direction with the given fadespeed.
         private IEnumerator FadeCoroutine(int direction, float fadeSpeed, Image fadeOverlay, string sceneName)
         {
+            //Transform t = null;
+            //t.set
             bool fading = true;
             while (fading)
             {
@@ -71,8 +75,8 @@ namespace Repel
                 }
                 else if ((direction == 1) && (_FadeValue >= 1))
                 {
-                    direction = -1;
                     StartCoroutine(LoadSceneAsync(sceneName));
+                    direction = -1;
                 }
 
                 //I use the WaitForEndOfFrame here so the Fade IEnumerator functions as a second update, which can use the Time.deltatime.
@@ -85,7 +89,7 @@ namespace Repel
         private IEnumerator LoadSceneAsync(string levelName)
         {
             AsyncOperation scene = SceneManager.LoadSceneAsync(levelName);
-            while ((!scene.isDone) && (_FadeValue >= 1f))
+            while ((!scene.isDone))
             {
                 yield return null;
             }
