@@ -8,6 +8,9 @@ namespace Repel
     public sealed class TapToStartController : IMenuManager
     {
         [SerializeField]
+        private PlayerRunManager _PlayerRunManager;
+
+        [SerializeField]
         private GameObject _Visuals;
 
         [SerializeField]
@@ -26,6 +29,7 @@ namespace Repel
         private void Awake()
         {
             _CanvasGroup.alpha = 0f;
+            _PlayerRunManager.BeforePlayerRunEvent += EnableVisuals;
         }
 
 

@@ -41,12 +41,22 @@ namespace Repel
         [Tooltip("This array contains all the objects that kill the player when touched.")]
         [SerializeField]
         private GameObject[] _KillObjects;
+
+        [Header("Acceleration timer.")]
+        [SerializeField]
+        private float _AccelerationTimerReset = 30;
+        [SerializeField]
+        private float _BigAcceleration, _SmallAcceleration;
+
+        [SerializeField]
+        private PlayerRunManager _PlayerRunManager;
         #endregion
 
         #region Private members
         private float _CurrDirectionAngle, _Score = 0f;
-        private bool _AngleChanged = false;
+        private bool _AngleChanged = false, _PlayerFrameCallPermission = false;
         private GameManager _GameManager;
+        private float _AccelerationTimer;
         #endregion
 
         #region Properties
@@ -55,6 +65,13 @@ namespace Repel
             get { return _Score; }
         }
         #endregion
+
+
+        //Set subscribtions.
+        private void Awake()
+        {
+            _PlayerRunManager.InPlayerRunEvent += StartPlayerRun;
+        }
 
 
         //Set a starting direction.
@@ -72,23 +89,43 @@ namespace Repel
                 transform.eulerAngles.x,
                 Mathf.Round(Random.Range(transform.eulerAngles.y - _StartAngleMin, transform.eulerAngles.y + _StartAngleMax)),
                 transform.eulerAngles.z);
+            _Acceleration = _BigAcceleration;
+            _PlayerFrameCallPermission = true;
         }
 
 
         //Call all the updated player functions.
         private void Update()
         {
-            AcceleratePlayer();
+            if(_PlayerFrameCallPermission)
+            {
+                AcceleratePlayer();
+                UpdateScore();
+            }
+
             MovePlayer();
             ReflectPlayer();
             AdjustPlayerDirection();
-            UpdateScore();
         }
 
 
         //Accelerates the player.
         private void AcceleratePlayer()
         {
+            _AccelerationTimer -= Time.deltaTime;
+            if(_AccelerationTimer <= 0)
+            {
+                _AccelerationTimer = _AccelerationTimerReset;
+                if(_Acceleration == _BigAcceleration)
+                {
+                    _Acceleration = _SmallAcceleration;
+                }
+                else if(_Acceleration == _SmallAcceleration)
+                {
+                    _Acceleration = _BigAcceleration;
+                }
+            }
+
             _MoveSpeed += _Acceleration * Time.deltaTime;
         }
 

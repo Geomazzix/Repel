@@ -11,8 +11,14 @@ namespace Repel
         private IMenuManager[] _MenuManagers;
 
         [SerializeField]
-        private GameManager _GameManager;
+        private PlayerRunManager _PlayerRunManager;
         #endregion
+
+
+        private void Awake()
+        {
+            _PlayerRunManager.InPlayerRunEvent += EnableIngameUI;
+        }
 
 
         //Sets all the values when the game starts.
@@ -22,8 +28,6 @@ namespace Repel
             {
                 _MenuManagers[i].DisableVisuals();
             }
-
-            _MenuManagers[0].EnableVisuals();
         }
 
 
@@ -42,6 +46,20 @@ namespace Repel
                     _MenuManagers[i].DisableVisuals();
                 }
             }
+        }
+
+
+        //Enables the ingameUI.
+        public void EnableIngameUI()
+        {
+            SetActiveMenu(1);
+        }
+
+
+        //Enables the pausemenu UI.
+        public void EnableIngamePauseMenu()
+        {
+            SetActiveMenu(0);
         }
     }
 }
