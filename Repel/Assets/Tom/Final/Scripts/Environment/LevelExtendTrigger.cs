@@ -16,6 +16,7 @@ namespace Repel
         [SerializeField]
         private int _LevelTileIndex = 0;
 
+        [Tooltip("The gap the trigger will move forward for the next call.")]
         [SerializeField]
         private float _TriggerMoveGap;
 

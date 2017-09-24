@@ -7,6 +7,8 @@ namespace Repel
     public delegate void BeforePlayerRunDelegate();
     public delegate void InPlayerRundDelegate();
     public delegate void PlayerDeadDelegate();
+    public delegate void PauseGameDelegate();
+    public delegate void ResumeGameDelegate();
 
 
     public class PlayerRunManager : MonoBehaviour
@@ -15,11 +17,16 @@ namespace Repel
         private UIManager _UIManager;
 
         [SerializeField]
-        private float _PauseGameSlomo;
+        private float _PauseGameSlomo, ResumeGameSlomo;
+
+        [SerializeField] private float pauseTransitionTime = 1f;
+        [SerializeField] SpawnPlayerBall _SpawnPlayerBallController;
 
         public event BeforePlayerRunDelegate BeforePlayerRunEvent;
         public event InPlayerRundDelegate InPlayerRunEvent;
         public event PlayerDeadDelegate PlayerDeadEvent;
+        public event PauseGameDelegate PauseGameEvent;
+        public event ResumeGameDelegate ResumeGameEvent;
 
 
         //When the scene loads in make sure to start certain things. Do this in the start so the other objects can subscribe to it in the Awake function.
@@ -68,7 +75,12 @@ namespace Repel
         public void PauseGame()
         {
             _UIManager.EnableIngamePauseMenu();
-            Time.timeScale = Mathf.Lerp(Time.timeScale, 0f, Time.deltaTime * _PauseGameSlomo);
+            if(PauseGameEvent != null)
+            {
+                PauseGameEvent.Invoke();
+            }
+
+            StartCoroutine(PauseGame(-1));
         }
 
 
@@ -76,7 +88,31 @@ namespace Repel
         public void ResumeGame()
         {
             _UIManager.EnableIngameUI();
-            Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * _PauseGameSlomo);
+
+            if (ResumeGameEvent!= null)
+            {
+                ResumeGameEvent.Invoke();
+            }
+            StartCoroutine(PauseGame(1));
+        }
+
+
+        //Pauses or resumes the game.
+        public IEnumerator PauseGame(int dir)
+        {
+            float counter = 0f;
+            while (counter < pauseTransitionTime)
+            {
+                counter += Time.unscaledDeltaTime;
+                if (dir == 1)
+                {
+                    Time.timeScale = Mathf.Lerp(0f, 1f, Mathf.InverseLerp(0f, pauseTransitionTime, counter));
+                } else if (dir == -1 )
+                {
+                    Time.timeScale = Mathf.Lerp(1f, 0f, Mathf.InverseLerp(0f, pauseTransitionTime, counter));
+                }
+                yield return null;
+            }
         }
     }
 }

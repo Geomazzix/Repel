@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
-    TODO: Make sure the player can't turn or at least see the skybox.
-*/
-
 namespace Repel
 {
     public class PlayerController : MonoBehaviour
     {
-
         #region Inspector
         [Header("Layers")]
         [SerializeField]
@@ -32,21 +27,10 @@ namespace Repel
         [SerializeField]
         private float _StartAngleMax = 30f, _DirectionAngle = 0f;
 
-
-        [Header("The starting point of the playerrun.")]
-        [SerializeField]
-        private Transform _StartingPoint;
-
         [Header("All deadly objects.")]
         [Tooltip("This array contains all the objects that kill the player when touched.")]
         [SerializeField]
         private GameObject[] _KillObjects;
-
-        [Header("Acceleration timer.")]
-        [SerializeField]
-        private float _AccelerationTimerReset = 30;
-        [SerializeField]
-        private float _BigAcceleration, _SmallAcceleration;
 
         [SerializeField]
         private PlayerRunManager _PlayerRunManager;
@@ -56,13 +40,17 @@ namespace Repel
         private float _CurrDirectionAngle, _Score = 0f;
         private bool _AngleChanged = false, _PlayerFrameCallPermission = false;
         private GameManager _GameManager;
-        private float _AccelerationTimer;
+        private Vector3 _StartingPoint;
         #endregion
 
         #region Properties
         public float Score
         {
             get { return _Score; }
+        }
+        public float MoveSpeed
+        {
+            get { return _MoveSpeed; }
         }
         #endregion
 
@@ -85,11 +73,12 @@ namespace Repel
         //Gets called when the playerrun starts.
         private void StartPlayerRun()
         {
-            transform.eulerAngles = new Vector3(
+            Vector3 startRot = new Vector3(
                 transform.eulerAngles.x,
                 Mathf.Round(Random.Range(transform.eulerAngles.y - _StartAngleMin, transform.eulerAngles.y + _StartAngleMax)),
                 transform.eulerAngles.z);
-            _Acceleration = _BigAcceleration;
+            transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.eulerAngles, startRot, 7f * Time.deltaTime));
+            _StartingPoint = transform.position;
             _PlayerFrameCallPermission = true;
         }
 
@@ -109,23 +98,9 @@ namespace Repel
         }
 
 
-        //Accelerates the player.
+        //Keeps adding speed to the movespeed so the player will accelerate throughout the game.
         private void AcceleratePlayer()
         {
-            _AccelerationTimer -= Time.deltaTime;
-            if(_AccelerationTimer <= 0)
-            {
-                _AccelerationTimer = _AccelerationTimerReset;
-                if(_Acceleration == _BigAcceleration)
-                {
-                    _Acceleration = _SmallAcceleration;
-                }
-                else if(_Acceleration == _SmallAcceleration)
-                {
-                    _Acceleration = _BigAcceleration;
-                }
-            }
-
             _MoveSpeed += _Acceleration * Time.deltaTime;
         }
 
@@ -151,6 +126,19 @@ namespace Repel
                 //Reflect the electricity
                 Vector3 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
 
+                int randomBounceOff = Random.Range(43, 47);
+
+                if (transform.eulerAngles.y < 0)
+                {
+                    transform.rotation = Quaternion.Euler(0, randomBounceOff, 0);
+                    _CurrDirectionAngle *= -1;
+                }
+                else if(transform.eulerAngles.y > 0)
+                {
+                    transform.rotation= Quaternion.Euler(0, -randomBounceOff, 0);
+                    _CurrDirectionAngle *= -1;
+                }
+
                 //Calculate the turn of the electricity
                 float rot = Mathf.Atan2(reflectDir.x, reflectDir.z) * Mathf.Rad2Deg;
                 transform.eulerAngles = new Vector3(0, rot, 0);
@@ -168,7 +156,7 @@ namespace Repel
         //Keeps adding score according to your distance.
         private void UpdateScore()
         {
-            float traveled = transform.position.z - _StartingPoint.position.z;
+            float traveled = transform.position.z - _StartingPoint.z;
             if (traveled > 0)
             {
                 _Score = traveled;

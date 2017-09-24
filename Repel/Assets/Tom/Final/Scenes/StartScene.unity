@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _FirstScene: MainMenu
   _FadeOverlay: {fileID: 1159752502}
-  _FadeSpeed: 0.8
+  _FadeSpeed: 2
 --- !u!114 &24533981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +163,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784fa292b4c997240af00695e41b18d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &124923807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 124923808}
+  m_Layer: 0
+  m_Name: NetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &124923808
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 124923807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 157.11469, y: 417.0332, z: 52.9796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &255556438
 Prefab:
   m_ObjectHideFlags: 0
@@ -495,6 +523,47 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224757820414654218, guid: 48038200facfe8c44ac2e026f2ecfb55,
     type: 2}
   m_PrefabInternal: {fileID: 746229539}
+--- !u!1 &773841831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 773841832}
+  - component: {fileID: 773841833}
+  m_Layer: 0
+  m_Name: IOManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &773841832
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773841831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 157.11469, y: 417.0332, z: 52.9796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &773841833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773841831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ccb63a2b2ffcb44bfa88bc4b3c8c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LocalScoreFilePath: "R\xE9pelData"
 --- !u!1 &827724105
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +888,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 114365515147617714, guid: a8fa4055b32401248bb9e19e6da181e5,
         type: 2}
       propertyPath: m_Type

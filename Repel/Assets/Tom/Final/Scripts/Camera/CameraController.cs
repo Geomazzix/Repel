@@ -7,40 +7,21 @@ namespace Repel
     public sealed class CameraController : MonoBehaviour
     {
         [SerializeField]
-        private Vector3 _MoveDirection;
+        private Transform _FollowPoint;
+
+        [Tooltip("The player turning causes the camera to slow down, this creates a very unsatisfying effect which can be 'fixed' by putting a lesser speed on the camera then on the player.")]
+        [SerializeField]
+        private float _FollowPointSpeedOffset;
 
         [SerializeField]
-        private float _StartingSpeed, _Acceleration;
-
-        private float _MoveSpeed;
+        private PlayerController _Player;
 
 
-        //Set starting values of the camera.
-        private void Awake()
-        {
-            _MoveSpeed = _StartingSpeed;
-        }
-
-
-        //Updates all framecalls.
+        //Move the camera.
         private void Update()
         {
-            AccelerateCamera();
-            MoveCamera();
-        }
-
-
-        //Keep adding speed to the movespeed of the camera so the player will have to keep up.
-        private void AccelerateCamera()
-        {
-            _MoveSpeed += _Acceleration * Time.deltaTime;
-        }
-
-
-        //Moves the camera into the movedirection with the movespeed.
-        private void MoveCamera()
-        {
-            transform.Translate(_MoveDirection * _MoveSpeed * Time.deltaTime, Space.World);
+            Vector3 followPos = new Vector3(transform.position.x, transform.position.y, _FollowPoint.position.z);
+            transform.position = Vector3.Lerp(transform.position, followPos, (_Player.MoveSpeed - _FollowPointSpeedOffset) * Time.deltaTime);
         }
     }
 }
