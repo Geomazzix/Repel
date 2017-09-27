@@ -21,17 +21,17 @@ EditorBuildSettings:
     path: Assets/Tom/Final/Scenes/DeathMenu.unity
     guid: 3102a3b4410acfb4ebccc8581b55f339
   - enabled: 1
-    path: Assets/Paul/Scenes/MainMenu 1.unity
-    guid: 28360de7081cde446810bb3682ca4044
+    path: Assets/Paul/Scenes/DeathMenu 1.unity
+    guid: 2b8a04b97719d1342ab37ae82a62ef47
   - enabled: 1
     path: Assets/Paul/Scenes/GameScene 1.unity
-    guid: 14fbf89b66982ef439e84f2c3e39af07
-  - enabled: 1
-    path: Assets/Paul/Scenes/DeathMenu 1.unity
-    guid: 179843ac9051ef340b80fc0658facb07
+    guid: e9171c38ade696141917dae834152db1
   - enabled: 1
     path: Assets/Paul/Scenes/HighscoreList 1.unity
-    guid: 57e651a95e0b08e41ae5529c3a3e4d75
+    guid: 6a43cf9175a49804290014021f490633
+  - enabled: 1
+    path: Assets/Paul/Scenes/MainMenu 1.unity
+    guid: 550b5abaec251ca44a6e94d606e75c51
   - enabled: 1
     path: Assets/Paul/Scenes/Settings 1.unity
-    guid: 80cf430ca0af6df48b4d4922cc910edb
+    guid: 23bc3bf845cd4624e8a03480e46dd4ed
