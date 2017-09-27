@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace Repel
 {
@@ -23,7 +20,7 @@ namespace Repel
         //Loads in a new scene.
         public void LoadScene(string sceneName)
         {
-            _GameManager.LoadSceneASync(sceneName);
+            _GameManager.StartSceneFadeOut(sceneName);
         }
     }
 }
