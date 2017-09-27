@@ -1932,6 +1932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23402b91b31994cb2282d7322201a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SceneName: DeathMenu
   _ReflectLayer:
     serializedVersion: 2
     m_Bits: 256
