@@ -7,6 +7,9 @@ namespace Repel
     public class PlayerController : MonoBehaviour
     {
         #region Inspector
+        [SerializeField]
+        private string _SceneName;
+
         [Header("Layers")]
         [SerializeField]
         private LayerMask _ReflectLayer;
@@ -131,12 +134,12 @@ namespace Repel
                 if (transform.eulerAngles.y < 0)
                 {
                     transform.rotation = Quaternion.Euler(0, randomBounceOff, 0);
-                    _CurrDirectionAngle *= -1;
+                    _CurrDirectionAngle *= 1;
                 }
                 else if(transform.eulerAngles.y > 0)
                 {
                     transform.rotation= Quaternion.Euler(0, -randomBounceOff, 0);
-                    _CurrDirectionAngle *= -1;
+                    _CurrDirectionAngle *= 1;
                 }
 
                 //Calculate the turn of the electricity
@@ -220,7 +223,7 @@ namespace Repel
         private void Die()
         {
             _PlayerRunManager.InvokePlayerDeadEvent();
-            _GameManager.StartSceneFadeOut("DeathMenu");
+            _GameManager.StartSceneFadeOut(_SceneName);
             gameObject.SetActive(false);
         }
     }
