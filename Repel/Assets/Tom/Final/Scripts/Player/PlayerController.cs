@@ -219,6 +219,7 @@ namespace Repel
         //Destroys the player.
         private void Die()
         {
+            _PlayerRunManager.InvokePlayerDeadEvent();
             _GameManager.StartSceneFadeOut("DeathMenu");
             gameObject.SetActive(false);
         }

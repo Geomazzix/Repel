@@ -11,15 +11,22 @@ namespace Repel
 
         private int _LocalScoreLength;
         private List<int> _LocalHighScores = new List<int>();
+        private string _FilePath;
+        private int _PlayerScore;
 
 
         //Call all the functions which should be handled when the game starts.
         private void Awake()
         {
+            //Make sure not destroy this gameobject when sceneloading.
+            DontDestroyOnLoad(gameObject);
+
+            _FilePath = @Application.dataPath + "\\" + _LocalScoreFilePath + ".LTPS";
+
             //At the start of the look if the localhighscore file exists, if so continue else create one.
-            if (!File.Exists(_LocalScoreFilePath))
+            if (!File.Exists(_FilePath))
             {
-                File.Create(@Application .dataPath + "\\" + _LocalScoreFilePath + ".LTPS");
+                File.Create(_FilePath);
             }
             else
             {
@@ -34,7 +41,7 @@ namespace Repel
         {
             List<int> localHighScores = new List<int>();
 
-            using (BinaryReader breader = new BinaryReader(File.Open(_LocalScoreFilePath, FileMode.Open)))
+            using (BinaryReader breader = new BinaryReader(File.Open(_FilePath, FileMode.Open)))
             {
                 int pos = 0;
                 int fileLength = (int)breader.BaseStream.Length;
@@ -52,14 +59,17 @@ namespace Repel
         //Writes content away in a file, returns true with success returns false when something went wrong.
         public void SetLocalHighscoreInList(int playerScore)
         {
+            //Make sure to save the playerscore of the last run.
+            _PlayerScore = playerScore;
+
             int localHighscoresLength = _LocalHighScores.Count;
-            if (_LocalHighScores == null)
+            if (localHighscoresLength <= 0)
             {
                 _LocalHighScores.Add(playerScore);
             }
-            else
+            else if(localHighscoresLength > 0)
             {
-                SetScoreInHighscoreListAndRemoveLastIndex(_LocalHighScores, playerScore);
+                SetScoreInHighscoreListAndRemoveLastIndex(_LocalHighScores);
             }
 
             //Make sure to add the changes to the file.
@@ -68,25 +78,29 @@ namespace Repel
 
 
         //Check if the playerscore is high enough to reach the highscore list.
-        private List<int> SetScoreInHighscoreListAndRemoveLastIndex(List<int> localHighscores, int playerScore)
+        private List<int> SetScoreInHighscoreListAndRemoveLastIndex(List<int> localHighscores)
         {
             //Check if the highscore is even supposed to be in the list.
-            if(playerScore > localHighscores[localHighscores.Count - 1])
+            if(_PlayerScore > localHighscores[localHighscores.Count - 1])
             {
                 //Add the last highscore to the list.
-                localHighscores.Add(playerScore);
+                localHighscores.Add(_PlayerScore);
 
                 int localHighscoresLength = localHighscores.Count;
-                for (int i = 0; i < localHighscoresLength; i++)
+                for (int x = 0; x < localHighscoresLength - 1; x++)
                 {
-                    //The highscorelist goes from localhighscores [0] being the highest, localhighscores.length being the lowest.
-                    if (localHighscores[i] < localHighscores[i + 1])
+                    for (int y = 0; y < localHighscoresLength - 1; y++)
                     {
-                        int currScore = localHighscores[i];
-                        localHighscores[i] = localHighscores[i + 1];
-                        localHighscores[i + 1] = currScore;
+                        //The highscorelist goes from localhighscores [0] being the highest, localhighscores.length being the lowest.
+                        if (localHighscores[y] < localHighscores[y + 1])
+                        {
+                            int currScore = localHighscores[y];
+                            localHighscores[y] = localHighscores[y + 1];
+                            localHighscores[y + 1] = currScore;
+                        }
                     }
                 }
+
 
                 //Make sure to check if the list gets to long, if so remove the lowest highscore.
                 if (localHighscoresLength > 10)
@@ -102,14 +116,29 @@ namespace Repel
         //Writes the new highscore in the file.
         private void OverrideOldFile()
         {
-            using (BinaryWriter bwriter = new BinaryWriter(File.Open(_LocalScoreFilePath, FileMode.Open)))
+            using (BinaryWriter bwriter = new BinaryWriter(File.Open(_FilePath, FileMode.Open)))
             {
+                //Write the highscorelist.
                 int localHighscoresLength = _LocalHighScores.Count;
                 for (int i = 0; i < localHighscoresLength; i++)
                 {
                     bwriter.Write(_LocalHighScores[i]);
                 }
             }
+        }
+
+
+        //Returns the localhighscore, but when there is none yet, just return -1.
+        public int GetPlayerHighScore()
+        {
+            return _LocalHighScores[0];
+        }
+
+
+        //The playerscore.
+        public int GetPlayerScore()
+        {
+            return _PlayerScore;
         }
     }
 }

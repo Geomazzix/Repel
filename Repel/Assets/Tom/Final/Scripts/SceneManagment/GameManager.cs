@@ -1,12 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Repel
 {
-    public sealed class GameManager : Singleton
+    public sealed class GameManager : MonoBehaviour
     {
         [SerializeField]
         private string _FirstScene;
@@ -19,15 +18,15 @@ namespace Repel
 
         private MenuManager[] _MenuManagers;
 
-
+        private int _FadeDir;
         private float _FadeValue = 0f;
 
 
         //Make sure this object is static.
         private void Awake()
         {
-            StartCoroutine(LoadSceneAsync(_FirstScene));
-            StartSceneFadeIn(_FirstScene);
+            DontDestroyOnLoad(gameObject);
+            StartSceneFadeIn();
         }
 
 
@@ -48,49 +47,37 @@ namespace Repel
 
 
         //Starts the screen fadein.
-        public void StartSceneFadeIn(string sceneName)
+        public void StartSceneFadeIn()
         {
             _FadeOverlay.gameObject.SetActive(true);
             _FadeValue = 1f;
-            StartCoroutine(FadeCoroutine(-1, _FadeSpeed, _FadeOverlay, sceneName));
+            StartCoroutine(FadeCoroutine(-1, _FadeSpeed, _FadeOverlay));
         }
 
 
         //Fades into the image's alpha value into the direction with the given fadespeed.
-        private IEnumerator FadeCoroutine(int direction, float fadeSpeed, Image fadeOverlay, string sceneName)
+        private IEnumerator FadeCoroutine(int direction, float fadeSpeed, Image fadeOverlay, string sceneName = null)
         {
-            //Transform t = null;
-            //t.set
+            _FadeDir = direction;
             bool fading = true;
             while (fading)
             {
-                _FadeValue += direction * fadeSpeed * Time.deltaTime;
+                _FadeValue += _FadeDir * fadeSpeed * Time.deltaTime;
                 fadeOverlay.color = new Color(fadeOverlay.color.r, fadeOverlay.color.g, fadeOverlay.color.b, _FadeValue);
 
                 //Check when to stop the coroutine.
-                if ((direction == -1) && (_FadeValue <= 0))
+                if ((_FadeDir == -1) && (_FadeValue <= 0))
                 {
-                    fadeOverlay.gameObject.SetActive(false);
+                    fadeOverlay.gameObject.SetActive(false);    
                     fading = false;
                 }
-                else if ((direction == 1) && (_FadeValue >= 1))
+                else if ((_FadeDir == 1) && (_FadeValue >= 1))
                 {
-                    StartCoroutine(LoadSceneAsync(sceneName));
-                    direction = -1;
+                    _FadeDir = -1;
+                    LoadScene(sceneName);
                 }
 
                 //I use the WaitForEndOfFrame here so the Fade IEnumerator functions as a second update, which can use the Time.deltatime.
-                yield return null;
-            }
-        }
-
-
-        //Loading the scene.
-        private IEnumerator LoadSceneAsync(string levelName)
-        {
-            AsyncOperation scene = SceneManager.LoadSceneAsync(levelName);
-            while ((!scene.isDone))
-            {
                 yield return null;
             }
         }

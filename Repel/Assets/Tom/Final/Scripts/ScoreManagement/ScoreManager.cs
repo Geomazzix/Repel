@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.IO;
+﻿using UnityEngine;
 
 namespace Repel
 {
-    public class ScoreManager : MonoBehaviour
+    public sealed class ScoreManager : MonoBehaviour
     {
         [SerializeField]
         private PlayerRunManager _PlayerRunManager;

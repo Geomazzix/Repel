@@ -6,14 +6,12 @@ using UnityEngine.SceneManagement;
 
 namespace Repel
 {
-    public class ReloadScene : MonoBehaviour
+    public class LoadScene : MonoBehaviour
     {
+        [SerializeField]
         private string _SceneName;
         private Button _UIButton;
         private GameManager _GameManager;
-
-        [SerializeField]
-        private PlayerRunManager _PlayerRunManager;
 
 
         //Search for the gamemanager and add the function to the delegate.
@@ -21,19 +19,15 @@ namespace Repel
         {
             _UIButton = GetComponent<Button>();
             _GameManager = FindObjectOfType<GameManager>();
-
             _UIButton.onClick.AddListener(CallGameManagerForSceneReload);
 
             Scene scene = SceneManager.GetActiveScene();
-            _SceneName = scene.name;
         }
 
 
         //Call the gamemanager for a scene reload.
         private void CallGameManagerForSceneReload()
         {
-            //Make sure to call this because the fadeout won't work when the timescale is 0.
-            _PlayerRunManager.ResumeGame();
 
             //Call the gamemanager for the screenfadeout and the scene reload.
             if (_GameManager != null)
