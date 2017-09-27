@@ -111,7 +111,7 @@ namespace Repel
         //Moves the player (made it for readability code).
         private void MovePlayer()
         {
-            transform.Translate(transform.forward * _MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(-transform.forward * _MoveSpeed * Time.deltaTime, Space.World);
         }
 
 
