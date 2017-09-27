@@ -1,64 +1,39 @@
 fileFormatVersion: 2
-guid: 0001e2322aa5a3d409a78c55dd737e57
-timeCreated: 1505917237
+guid: 624086aaa2fbd9d49b5ef6782699b155
+timeCreated: 1506514449
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Background_hexagon_11
-    100004: Background_hexagon_12
-    100006: Background_hexagon_13
-    100008: Background_hexagon_14
-    100010: Background_hexagon_3
-    100012: Background_hexagon_4
-    100014: Background_hexagon_5
-    100016: Background_hexagon_6
-    100018: Background_hexagon_7
-    100020: Background_hexagon_8
-    400000: //RootNode
-    400002: Background_hexagon_11
-    400004: Background_hexagon_12
-    400006: Background_hexagon_13
-    400008: Background_hexagon_14
-    400010: Background_hexagon_3
-    400012: Background_hexagon_4
-    400014: Background_hexagon_5
-    400016: Background_hexagon_6
-    400018: Background_hexagon_7
-    400020: Background_hexagon_8
-    2300000: Background_hexagon_11
-    2300002: Background_hexagon_12
-    2300004: Background_hexagon_13
-    2300006: Background_hexagon_14
-    2300008: Background_hexagon_3
-    2300010: Background_hexagon_4
-    2300012: Background_hexagon_5
-    2300014: Background_hexagon_6
-    2300016: Background_hexagon_7
-    2300018: Background_hexagon_8
-    3300000: Background_hexagon_11
-    3300002: Background_hexagon_12
-    3300004: Background_hexagon_13
-    3300006: Background_hexagon_14
-    3300008: Background_hexagon_3
-    3300010: Background_hexagon_4
-    3300012: Background_hexagon_5
-    3300014: Background_hexagon_6
-    3300016: Background_hexagon_7
-    3300018: Background_hexagon_8
-    4300000: Background_hexagon_3
-    4300002: Background_hexagon_4
-    4300004: Background_hexagon_5
-    4300006: Background_hexagon_6
-    4300008: Background_hexagon_7
-    4300010: Background_hexagon_8
-    4300012: Background_hexagon_11
-    4300014: Background_hexagon_12
-    4300016: Background_hexagon_13
-    4300018: Background_hexagon_14
-    7400000: Background_animation
+    100000: Left_arm
+    100002: Left_hand
+    100004: Left_shldr
+    100006: //RootNode
+    100008: Playermodel_1
+    100010: Right_arm
+    100012: Right_hand
+    100014: Right_shldr
+    100016: Root
+    100018: Spine_1
+    100020: Tail
+    400000: Left_arm
+    400002: Left_hand
+    400004: Left_shldr
+    400006: //RootNode
+    400008: Playermodel_1
+    400010: Right_arm
+    400012: Right_hand
+    400014: Right_shldr
+    400016: Root
+    400018: Spine_1
+    400020: Tail
+    2300000: Playermodel_1
+    3300000: Playermodel_1
+    4300000: Playermodel_1
+    7400000: Player_animation
     9500000: //RootNode
+    11100000: //RootNode
+    13700000: Playermodel_1
   materials:
     importMaterials: 1
     materialName: 0
@@ -79,16 +54,16 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 0
+    animationWrapMode: 2
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Background_animation
+      name: Player_animation
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 240
-      wrapMode: 0
+      firstFrame: 15
+      lastFrame: 73
+      wrapMode: 2
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
@@ -114,13 +89,13 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -153,10 +128,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
