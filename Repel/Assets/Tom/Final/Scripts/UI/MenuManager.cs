@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Repel
@@ -17,13 +16,6 @@ namespace Repel
         [SerializeField]
         private CanvasGroup _CanvasGroup;
         #endregion
-
-
-        //Make sure to set the canvasgroups alpha to 0, so it would not be visible when the game starts.
-        private void Awake()
-        {
-            _CanvasGroup.alpha = 0f;
-        }
 
 
         //Enables the menu visuals.

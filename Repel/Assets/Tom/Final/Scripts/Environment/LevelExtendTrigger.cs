@@ -7,7 +7,7 @@ namespace Repel
     public class LevelExtendTrigger : MonoBehaviour
     {
         [SerializeField]
-        private PlayerController _Player;
+        private GameObject _TriggerObject;
 
         [SerializeField]
         private LevelBuilder _LevelBuilder;
@@ -16,6 +16,7 @@ namespace Repel
         [SerializeField]
         private int _LevelTileIndex = 0;
 
+        [Tooltip("The gap the trigger will move forward for the next call.")]
         [SerializeField]
         private float _TriggerMoveGap;
 
@@ -23,7 +24,7 @@ namespace Repel
         //Check whenever the player moves through the trigger, when so make sure to signal the levelbuilder of it.
         private void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject == _Player.gameObject)
+            if(other.gameObject == _TriggerObject.gameObject)
             {
                 _LevelBuilder.ExtendLevel(_LevelTileIndex);
             }
