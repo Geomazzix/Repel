@@ -243,7 +243,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.35
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,8 +284,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5.87
-      minScalar: 3.22
+      scalar: 6
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -679,9 +679,9 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 2
-    angle: 25
-    length: 5
+    type: 8
+    angle: 36.89115
+    length: 0.79325163
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.01
@@ -701,7 +701,7 @@ ParticleSystem:
     sphericalDirectionAmount: 1
     randomPositionAmount: 0
     radius:
-      value: 0.24
+      value: 0.01
       mode: 0
       spread: 0
       speed:
@@ -894,15 +894,15 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         - serializedVersion: 2
           time: 1
-          value: 0.7542924
-          inSlope: -0.62166816
-          outSlope: -0.62166816
+          value: 0.56716347
+          inSlope: 2
+          outSlope: 2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1160,7 +1160,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 40092
+        atime1: 52428
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -1341,7 +1341,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.9
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2185,7 +2185,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   SizeBySpeedModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -3450,13 +3450,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1083028517}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!1 &1546713104
 GameObject:
   m_ObjectHideFlags: 0
