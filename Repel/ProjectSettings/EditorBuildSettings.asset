@@ -5,33 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Tom/Final/Scenes/MainMenu.unity
     guid: 27a91a109cc13c64f94d1f783258ee45
-  - enabled: 0
+  - enabled: 1
     path: Assets/Tom/Final/Scenes/GameScene.unity
     guid: 2dc33dab6e0f16d4cae67805bb9405ae
-  - enabled: 0
+  - enabled: 1
     path: Assets/Tom/Final/Scenes/Settings.unity
     guid: 4a180347fbb1b844893bc224936ec032
-  - enabled: 0
+  - enabled: 1
     path: Assets/Tom/Final/Scenes/HighscoreList.unity
     guid: 5b0d566d7f054cc4eadfa092f7cec8a3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Tom/Final/Scenes/DeathMenu.unity
     guid: 3102a3b4410acfb4ebccc8581b55f339
-  - enabled: 1
+  - enabled: 0
     path: Assets/Paul/Scenes/DeathMenu 1.unity
     guid: 2b8a04b97719d1342ab37ae82a62ef47
-  - enabled: 1
+  - enabled: 0
     path: Assets/Paul/Scenes/GameScene 1.unity
     guid: e9171c38ade696141917dae834152db1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Paul/Scenes/HighscoreList 1.unity
     guid: 6a43cf9175a49804290014021f490633
-  - enabled: 1
+  - enabled: 0
     path: Assets/Paul/Scenes/MainMenu 1.unity
     guid: 550b5abaec251ca44a6e94d606e75c51
-  - enabled: 1
+  - enabled: 0
     path: Assets/Paul/Scenes/Settings 1.unity
     guid: 23bc3bf845cd4624e8a03480e46dd4ed
