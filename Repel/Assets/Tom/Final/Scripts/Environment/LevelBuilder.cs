@@ -28,7 +28,7 @@ namespace Repel
         private void Awake()
         {
             //Initliaze the queues.
-            _LevelTilesQueues = new Queue<LevelTilesHolder>[3];
+            _LevelTilesQueues = new Queue<LevelTilesHolder>[1];
 
             //Fill the queues with the starting objects.
             int levelTileQueuesLength = _LevelTilesQueues.Length;
