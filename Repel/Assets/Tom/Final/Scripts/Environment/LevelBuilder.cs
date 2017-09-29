@@ -10,10 +10,6 @@ namespace Repel
         public LevelTilesHolder[] DiffTiles;
     }
 
-
-    /*
-     Contains all the different leveltile arrays, puts them into queues and tells them to move whenever the ExtendLevel function is called.
-    */
     public sealed class LevelBuilder : MonoBehaviour
     {
         [SerializeField]

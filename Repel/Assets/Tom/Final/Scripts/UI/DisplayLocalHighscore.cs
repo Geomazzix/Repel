@@ -15,7 +15,7 @@ namespace Repel
         private void Awake()
         {
             IOManager IOManager = FindObjectOfType<IOManager>();
-            _LocalHighscore = IOManager.GetPlayerHighScore();
+            _LocalHighscore = IOManager.GetLocalPlayerHighscore();
             _TextMeshText.text = _LocalHighscore.ToString();
         }
     }

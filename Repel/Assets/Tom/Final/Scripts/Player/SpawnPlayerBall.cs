@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Repel
 {
@@ -28,6 +26,9 @@ namespace Repel
 
         [SerializeField]
         private PlayerRunManager _PlayerRunManager;
+
+        [SerializeField]
+        private PoolController _PoolController;
         #endregion
 
         #region private members
@@ -70,9 +71,10 @@ namespace Repel
                     //Start spawning the ball.
                     if (Input.GetButtonDown("Fire1"))
                     {
-                        _SpawningPlayerBall = Instantiate(_Playerball, hit.point, Quaternion.identity);
+                        _SpawningPlayerBall = _PoolController.ActivatePoolObject(hit.point, new Vector3(0,0,0), _MinScale);
                     }
 
+                    //When the spawningPlayerball turns out to be null it means the pool was full.
                     if(_SpawningPlayerBall != null)
                     {
                         //When a ball is being spawned make sure to scale him.
@@ -91,7 +93,7 @@ namespace Repel
                         {
                             //Activating the spherecollider will activate the collision for the player.
                             //_SpawningPlayerBall.GetComponent<SphereCollider>().enabled = true;
-                            _SpawningPlayerBall.gameObject.tag = "PlayerBall";
+                            _SpawningPlayerBall.GetComponent<SphereCollider>().enabled = true;
                             _SpawningPlayerBall = null;
                         }
                     }
