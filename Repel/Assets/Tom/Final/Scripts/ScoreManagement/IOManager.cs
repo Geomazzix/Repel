@@ -4,10 +4,10 @@ using System.IO;
 
 namespace Repel
 {
-    public class IOManager : MonoBehaviour
+    public sealed class IOManager : MonoBehaviour
     {
-        [SerializeField]
-        private string _LocalScoreFilePath;
+        [Header("Filepath for the localhighscores.")]
+        [SerializeField] private string _LocalScoreFilePath;
 
         private int _LocalScoreLength;
         private List<int> _LocalHighScores = new List<int>();
@@ -21,7 +21,14 @@ namespace Repel
             //Make sure not destroy this gameobject when sceneloading.
             DontDestroyOnLoad(gameObject);
 
-            _FilePath = @Application.dataPath + "\\" + _LocalScoreFilePath + ".LTPS";
+            //check on which device the app is running so the compiler knows how to write and read the files in the file explorer.
+            #if UNITY_ANDROID
+                _FilePath = @Application.dataPath + "\\" + _LocalScoreFilePath + ".LTPS";
+            #elif UNITY_STANDALONE_WIN
+                _FilePath = @Application.dataPath + "\\" + _LocalScoreFilePath + ".LTPS"; 
+            #elif UNITY_IPHONE
+                _FilePath = @Application.dataPath + "/" + _LocalScoreFilePath + ".LTPS"; 
+            #endif
 
             //At the start of the look if the localhighscore file exists, if so continue else create one.
             if (!File.Exists(_FilePath))
@@ -41,13 +48,13 @@ namespace Repel
         {
             List<int> localHighScores = new List<int>();
 
-            using (BinaryReader breader = new BinaryReader(File.Open(_FilePath, FileMode.Open)))
+            using (BinaryReader bReader = new BinaryReader(File.Open(_FilePath, FileMode.Open)))
             {
                 int pos = 0;
-                int fileLength = (int)breader.BaseStream.Length;
+                int fileLength = (int)bReader.BaseStream.Length;
                 while(pos < fileLength)
                 {
-                    localHighScores.Add(breader.ReadInt32());
+                    localHighScores.Add(bReader.ReadInt32());
                     pos += sizeof(int);
                 }
             }
@@ -129,13 +136,25 @@ namespace Repel
 
 
         //Returns the localhighscore, but when there is none yet, just return -1.
-        public int GetPlayerHighScore()
+        public int GetLocalPlayerHighscore()
         {
             return _LocalHighScores[0];
         }
 
 
-        //The playerscore.
+        //Returns an array containing the current top-5 player highscores.
+        public int GetLocalScoreAtIndex(int index)
+        {
+            if(_LocalHighScores.Count >= index)
+            {
+                return _LocalHighScores[index];
+            }
+
+            return -1;
+        }
+
+
+        //Returns the playerscore of the last playerrun.
         public int GetPlayerScore()
         {
             return _PlayerScore;

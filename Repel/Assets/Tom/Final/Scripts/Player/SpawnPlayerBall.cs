@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Repel
 {
@@ -11,10 +9,6 @@ namespace Repel
         [Tooltip("This layer resembles the height of the pivot of the ball.")]
         [SerializeField]
         private LayerMask _SpawnLayer;
-
-        [Header("The playerball prefab.")]
-        [SerializeField]
-        private GameObject _Playerball;
 
         [Header("BallGrowspeed when spawning him.")]
         [SerializeField]
@@ -28,6 +22,9 @@ namespace Repel
 
         [SerializeField]
         private PlayerRunManager _PlayerRunManager;
+
+        [SerializeField]
+        private PoolController _PoolController;
         #endregion
 
         #region private members
@@ -70,20 +67,22 @@ namespace Repel
                     //Start spawning the ball.
                     if (Input.GetButtonDown("Fire1"))
                     {
-                        _SpawningPlayerBall = Instantiate(_Playerball, hit.point, Quaternion.identity);
+                        _SpawningPlayerBall = _PoolController.ActivatePoolObject(hit.point, new Vector3(0,0,0), _MinScale);
                     }
 
+                    //When the spawningPlayerball turns out to be null it means the pool was full.
                     if(_SpawningPlayerBall != null)
                     {
                         //When a ball is being spawned make sure to scale him.
                         if (Input.GetButton("Fire1"))
                         {
-                            _SpawningPlayerBall.transform.position = hit.point;
+                            _SpawningPlayerBall.transform.position = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                             _SpawningPlayerBall.transform.localScale += new Vector3(_GrowSpeed, _GrowSpeed, _GrowSpeed);
                             _SpawningPlayerBall.transform.localScale = new Vector3(
                                 Mathf.Clamp(_SpawningPlayerBall.transform.localScale.x, _MinScale.x, _MaxScale.x),
                                 Mathf.Clamp(_SpawningPlayerBall.transform.localScale.y, _MinScale.y, _MaxScale.y),
                                 Mathf.Clamp(_SpawningPlayerBall.transform.localScale.z, _MinScale.z, _MaxScale.z));
+                            _SpawningPlayerBall.transform.rotation = Quaternion.Euler(-90, 0, 0);
                         }
 
                         //Make sure to reset the spawning ball.
@@ -91,7 +90,7 @@ namespace Repel
                         {
                             //Activating the spherecollider will activate the collision for the player.
                             //_SpawningPlayerBall.GetComponent<SphereCollider>().enabled = true;
-                            _SpawningPlayerBall.gameObject.tag = "PlayerBall";
+                            _SpawningPlayerBall.GetComponent<BoxCollider>().enabled = true;
                             _SpawningPlayerBall = null;
                         }
                     }
