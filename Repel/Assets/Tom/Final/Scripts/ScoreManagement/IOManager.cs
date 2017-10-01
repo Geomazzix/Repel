@@ -4,10 +4,10 @@ using System.IO;
 
 namespace Repel
 {
-    public class IOManager : MonoBehaviour
+    public sealed class IOManager : MonoBehaviour
     {
-        [SerializeField]
-        private string _LocalScoreFilePath;
+        [Header("Filepath for the localhighscores.")]
+        [SerializeField] private string _LocalScoreFilePath;
 
         private int _LocalScoreLength;
         private List<int> _LocalHighScores = new List<int>();
@@ -21,6 +21,7 @@ namespace Repel
             //Make sure not destroy this gameobject when sceneloading.
             DontDestroyOnLoad(gameObject);
 
+            //check on which device the app is running so the compiler knows how to write and read the files in the file explorer.
             #if UNITY_ANDROID
                 _FilePath = @Application.dataPath + "\\" + _LocalScoreFilePath + ".LTPS";
             #elif UNITY_STANDALONE_WIN
@@ -153,7 +154,7 @@ namespace Repel
         }
 
 
-        //The playerscore.
+        //Returns the playerscore of the last playerrun.
         public int GetPlayerScore()
         {
             return _PlayerScore;
