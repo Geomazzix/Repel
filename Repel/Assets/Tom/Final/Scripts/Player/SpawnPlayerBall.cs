@@ -2,7 +2,7 @@
 
 namespace Repel
 {
-    public class SpawnPlayerBall : MonoBehaviour
+    public sealed class SpawnPlayerBall : MonoBehaviour
     {
         #region Inspector
         [Header("The spawnlayer of the ball.")]
@@ -88,9 +88,9 @@ namespace Repel
                         //Make sure to reset the spawning ball.
                         if (Input.GetButtonUp("Fire1"))
                         {
-                            //Activating the spherecollider will activate the collision for the player.
                             //_SpawningPlayerBall.GetComponent<SphereCollider>().enabled = true;
-                            _SpawningPlayerBall.GetComponent<BoxCollider>().enabled = true;
+                            //_SpawningPlayerBall.GetComponent<BoxCollider>().enabled = true;
+                            _SpawningPlayerBall.tag = "PlayerBall";
                             _SpawningPlayerBall = null;
                         }
                     }

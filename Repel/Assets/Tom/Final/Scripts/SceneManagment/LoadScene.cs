@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -28,7 +26,6 @@ namespace Repel
         //Call the gamemanager for a scene reload.
         private void CallGameManagerForSceneReload()
         {
-
             //Call the gamemanager for the screenfadeout and the scene reload.
             if (_GameManager != null)
             {
