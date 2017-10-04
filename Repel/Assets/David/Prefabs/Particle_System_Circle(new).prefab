@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198892962826141444}
   - component: {fileID: 199090741128155246}
   m_Layer: 9
-  m_Name: Particle_System_Circle 1
+  m_Name: Particle_System_Circle(new)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
