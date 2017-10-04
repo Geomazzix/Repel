@@ -28,7 +28,6 @@ namespace Repel
         //Call the gamemanager for a scene reload.
         private void CallGameManagerForSceneReload()
         {
-
             //Call the gamemanager for the screenfadeout and the scene reload.
             if (_GameManager != null)
             {

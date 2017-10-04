@@ -6,15 +6,14 @@ namespace Repel
 {
     public sealed class CameraController : MonoBehaviour
     {
-        [SerializeField]
-        private Transform _FollowPoint;
-
+        [Header("Offset values.")]
         [Tooltip("The player turning causes the camera to slow down, this creates a very unsatisfying effect which can be 'fixed' by putting a lesser speed on the camera then on the player.")]
-        [SerializeField]
-        private float _FollowPointSpeedOffset;
+        [SerializeField] private float _FollowPointSpeedOffset;
 
-        [SerializeField]
-        private PlayerController _Player;
+        [Header("Movespeed values.")]
+        [Tooltip("Used to get the current playerspeed.")]
+        [SerializeField] private PlayerController _Player;
+        [SerializeField] private Transform _FollowPoint;
 
 
         //Move the camera.

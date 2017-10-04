@@ -17,19 +17,25 @@ namespace Repel
         private CanvasGroup _CanvasGroup;
         #endregion
 
+        private IEnumerator _FadeMenu;
+
 
         //Enables the menu visuals.
         public override void EnableVisuals()
         {
             _Visuals.SetActive(true);
-            StartCoroutine(FadeMenu(_CanvasGroup, 1, _MenuFadeSpeed));
+            _FadeMenu = FadeMenu(_CanvasGroup, 1, _MenuFadeSpeed);
+            StopAllCoroutines();
+            StartCoroutine(_FadeMenu);
         }
 
 
         //Disables the menu visuals.
         public override void DisableVisuals()
         {
-            StartCoroutine(FadeMenu(_CanvasGroup , -1, _MenuFadeSpeed));
+            _FadeMenu = FadeMenu(_CanvasGroup, -1, _MenuFadeSpeed);
+            StopAllCoroutines();
+            StartCoroutine(_FadeMenu);
         }
 
 

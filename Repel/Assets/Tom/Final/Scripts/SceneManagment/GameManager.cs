@@ -25,7 +25,13 @@ namespace Repel
         //Make sure this object is static.
         private void Awake()
         {
+            //Make sure to never the object.
             DontDestroyOnLoad(gameObject);
+
+            //Make sure to enable the fadeOverlay when the game starts, I have disabled this because it does work very anoying in the editor when it overlaps every UI.
+            _FadeOverlay.gameObject.SetActive(true);
+
+            //Start the first scene with a fade-in.
             StartSceneFadeIn();
         }
 
