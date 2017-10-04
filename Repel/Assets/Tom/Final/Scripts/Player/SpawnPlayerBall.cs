@@ -2,7 +2,7 @@
 
 namespace Repel
 {
-    public class SpawnPlayerBall : MonoBehaviour
+    public sealed class SpawnPlayerBall : MonoBehaviour
     {
         #region Inspector
         [Header("The spawnlayer of the ball.")]
