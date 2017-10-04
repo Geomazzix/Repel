@@ -485,7 +485,6 @@ GameObject:
   - component: {fileID: 785862160}
   - component: {fileID: 785862159}
   - component: {fileID: 785862158}
-  - component: {fileID: 785862161}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -551,8 +550,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 785862161}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 878953252}
+        m_MethodName: StartSceneFadeOut
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -597,18 +596,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 785862156}
---- !u!114 &785862161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 785862156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6427b331b41dc45acddc49e1599e63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _MenuManager: {fileID: 238942965}
 --- !u!1 &878953251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1021,6 @@ GameObject:
   - component: {fileID: 1383999098}
   - component: {fileID: 1383999097}
   - component: {fileID: 1383999096}
-  - component: {fileID: 1383999099}
   m_Layer: 5
   m_Name: HighscoreListButton
   m_TagString: Untagged
@@ -1099,7 +1085,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1383999097}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 878953252}
+        m_MethodName: StartSceneFadeOut
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HighscoreList
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1383999097
@@ -1135,18 +1132,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1383999094}
---- !u!114 &1383999099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1383999094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380b2e47206c14b4fb9d997f91afdc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _SceneName: HighscoreList
 --- !u!1 &1613509577
 GameObject:
   m_ObjectHideFlags: 0
