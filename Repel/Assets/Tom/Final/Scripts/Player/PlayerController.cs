@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Repel
 {
@@ -37,6 +35,9 @@ namespace Repel
 
         [SerializeField]
         private PlayerRunManager _PlayerRunManager;
+
+        [SerializeField]
+        private GameObject _DeathParticle;
         #endregion
 
         #region Private members
@@ -221,6 +222,29 @@ namespace Repel
 
         //Destroys the player.
         private void Die()
+        {
+            //Play the death particle.
+            _DeathParticle.SetActive(true);
+
+            //All the calls the player needs to stop moving, making his mesh dissappear and making his trails stop.
+            _PlayerFrameCallPermission = false;
+            _MoveSpeed = 0f;
+            GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+            TrailRenderer[] trails = GetComponentsInChildren<TrailRenderer>();
+            for (int i = 0; i < 3; i++)
+            {
+                trails[i].enabled = false;
+            }
+
+            ParticleSystem par = _DeathParticle.GetComponent<ParticleSystem>();
+
+            //After the particle is done playing.
+            Invoke("GiveSceneCall", par.main.duration);
+        }
+
+
+        //When the playerparticle effect is done playing continue to the next scene.
+        private void GiveSceneCall()
         {
             _PlayerRunManager.InvokePlayerDeadEvent();
             _GameManager.StartSceneFadeOut(_SceneName);

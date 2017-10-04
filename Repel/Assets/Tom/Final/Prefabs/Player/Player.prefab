@@ -230,17 +230,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23402b91b31994cb2282d7322201a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SceneName: 
   _ReflectLayer:
     serializedVersion: 2
     m_Bits: 256
   _MoveSpeed: 0
+  _StartingMoveSpeed: 0
+  _Acceleration: 0
   _StartAngleMin: 25
   _StartAngleMax: 25
   _DirectionAngle: 20
-  _MaxLeftAngle: {x: -45, y: -45, z: -45}
-  _MaxRightAngle: {x: 45, y: 45, z: 45}
-  _StartingPoint: {fileID: 0}
-  _WorldController: {fileID: 0}
+  _KillObjects: []
+  _PlayerRunManager: {fileID: 0}
 --- !u!135 &135401860588347252
 SphereCollider:
   m_ObjectHideFlags: 1
