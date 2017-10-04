@@ -136,7 +136,7 @@ Transform:
   m_GameObject: {fileID: 17637094}
   m_LocalRotation: {x: -0.8405435, y: -0, z: -0, w: 0.54174405}
   m_LocalPosition: {x: -0.10000005, y: -0.37, z: 0.34000015}
-  m_LocalScale: {x: 2.1615639, y: 2.1615644, z: 2.1615644}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 1850261406}
   m_Father: {fileID: 595196876}
@@ -255,7 +255,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1560589182
+  randomSeed: -359240700
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4039,13 +4039,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 178212553}
-  m_LocalRotation: {x: -0.50955284, y: -0, z: -0, w: 0.86043936}
-  m_LocalPosition: {x: 0, y: 4.047618, z: 17.454798}
+  m_LocalRotation: {x: -0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 4.03, z: 17.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 919492768}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -60, y: 0, z: 0}
 --- !u!65 &178212555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4401,11 +4401,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1152930986457182, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_TagString
-      value: PlayerBall
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_Layer
@@ -5787,7 +5787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1152930986457182, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_IsActive
@@ -5795,7 +5795,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1152930986457182, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_TagString
-      value: PlayerBall
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_Layer
@@ -7407,11 +7407,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1152930986457182, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_TagString
-      value: PlayerBall
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1152930986457182, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_Layer
@@ -7956,7 +7956,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1108789404
+  randomSeed: -862460698
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11624,7 +11624,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1152930986457182, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_IsActive
@@ -11632,7 +11632,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1152930986457182, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_TagString
-      value: PlayerBall
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_Layer
@@ -12011,11 +12011,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1152930986457182, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_TagString
-      value: PlayerBall
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1620296599371308, guid: 20eb1ea50baefec43a276fddfb8e8a3b, type: 2}
       propertyPath: m_Layer

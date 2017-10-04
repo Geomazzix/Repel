@@ -238,6 +238,8 @@ namespace Repel
 
             ParticleSystem par = _DeathParticle.GetComponent<ParticleSystem>();
 
+            print(par.main.duration);
+
             //After the particle is done playing.
             Invoke("GiveSceneCall", par.main.duration);
         }
