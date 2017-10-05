@@ -23,7 +23,7 @@ namespace Repel
 
             //check on which device the app is running so the compiler knows how to write and read the files in the file explorer.
             #if UNITY_ANDROID
-                _FilePath = @Application.dataPath + "\\" + _LocalScoreFilePath + ".LTPS";
+                _FilePath = @Application.persistentDataPath + _LocalScoreFilePath + ".LTPS";
             #elif UNITY_STANDALONE_WIN
                 _FilePath = @Application.dataPath + "\\" + _LocalScoreFilePath + ".LTPS"; 
             #elif UNITY_IPHONE

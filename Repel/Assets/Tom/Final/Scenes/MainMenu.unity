@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ccb63a2b2ffcb44bfa88bc4b3c8c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LocalScoreFilePath: "R\xE9pelData"
+  _LocalScoreFilePath: RepelData
 --- !u!4 &1074236912
 Transform:
   m_ObjectHideFlags: 0
