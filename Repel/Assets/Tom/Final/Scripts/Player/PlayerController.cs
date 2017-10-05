@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Repel
 {
@@ -238,19 +239,20 @@ namespace Repel
 
             ParticleSystem par = _DeathParticle.GetComponent<ParticleSystem>();
 
-            print(par.main.duration);
-
-            //After the particle is done playing.
-            Invoke("GiveSceneCall", par.main.duration);
-        }
-
-
-        //When the playerparticle effect is done playing continue to the next scene.
-        private void GiveSceneCall()
-        {
             _PlayerRunManager.InvokePlayerDeadEvent();
             _GameManager.StartSceneFadeOut(_SceneName);
             gameObject.SetActive(false);
+
+            //After the particle is done playing.
+            StartCoroutine(PlayerDead());
+        }
+
+
+        //Make sure to load the new scene in 2 seconds
+        private IEnumerator PlayerDead()
+        {
+            yield return new WaitForSeconds(2f);
+
         }
     }
 }

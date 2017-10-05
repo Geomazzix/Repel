@@ -1546,21 +1546,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 641024766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ae8dad695fa784183b9ce9220bd2fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _MenuManagers:
-  - {fileID: 1333484073}
-  - {fileID: 1095308418}
---- !u!114 &641024772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 641024766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1864a17d8353097448b3fa3a7c4dbe12, type: 3}
+  m_Script: {fileID: 11500000, guid: c27a5bdf105cf21409b6ac095fd91fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _HighscoreListDisplay:
@@ -1569,6 +1555,20 @@ MonoBehaviour:
   - {fileID: 2083727830}
   - {fileID: 519221179}
   - {fileID: 718270572}
+--- !u!114 &641024772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 641024766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c1632c4bab7b4c8e642c879276095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MenuManagers:
+  - {fileID: 1333484073}
+  - {fileID: 1095308418}
 --- !u!1 &662775619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,7 +3580,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 641024771}
+      - m_Target: {fileID: 641024772}
         m_MethodName: SetActivateHighscoreList
         m_Mode: 3
         m_Arguments:
@@ -4966,7 +4966,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 641024771}
+      - m_Target: {fileID: 641024772}
         m_MethodName: SetActivateHighscoreList
         m_Mode: 3
         m_Arguments:

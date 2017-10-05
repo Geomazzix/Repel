@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Tom/Final/Scenes/GameScene.unity
     guid: 2dc33dab6e0f16d4cae67805bb9405ae
   - enabled: 1
-    path: Assets/Tom/Final/Scenes/HighscoreList.unity
-    guid: 5b0d566d7f054cc4eadfa092f7cec8a3
-  - enabled: 1
     path: Assets/Tom/Final/Scenes/DeathMenu.unity
     guid: 3102a3b4410acfb4ebccc8581b55f339
+  - enabled: 1
+    path: Assets/Tom/Final/Scenes/HighscoreList.unity
+    guid: 5b0d566d7f054cc4eadfa092f7cec8a3
